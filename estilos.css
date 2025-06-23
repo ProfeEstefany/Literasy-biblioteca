@@ -178,8 +178,8 @@ footer {
 /* --- Estilo y Animación del Avatar --- */
 #avatar-container {
     position: fixed; /* Hace que el avatar se quede fijo en la pantalla */
-    top: 40px;    /* 30px desde la parte inferior */
-    left: 40px;     /* 30px desde la derecha */
+    top: 30px;    /* 30px desde la parte inferior */
+    left: 30px;     /* 30px desde la derecha */
     z-index: 1000;   /* Asegura que esté por encima de otros elementos */
     cursor: pointer; /* Indica que se puede hacer clic en él */
     transition: all 0.5s ease-in-out; /* Transición suave para movimientos JS */
