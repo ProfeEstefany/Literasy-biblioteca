@@ -175,26 +175,27 @@ footer {
 <div id="avatar-container">
     <img id="avatar-img" src="Imagenes/Avatar.png" alt="Avatar de la biblioteca">
 </div>
+
 /* --- Estilo y Animación del Avatar --- */
 #avatar-container {
-    position: fixed; /* Hace que el avatar se quede fijo en la pantalla */
-    top: 30px;    /* 30px desde la parte inferior */
-    left: 30px;     /* 30px desde la derecha */
-    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
-    cursor: pointer; /* Indica que se puede hacer clic en él */
-    transition: all 0.5s ease-in-out; /* Transición suave para movimientos JS */
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 #avatar-img {
-    width: 80px;  /* Tamaño del avatar */
+    width: 80px;
     height: 80px;
-    border-radius: 50%; /* Hace que la imagen sea circular (si es cuadrada) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    animation: floatAvatar 3s ease-in-out infinite; /* Animación de flotación */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: floatAvatar 3s ease-in-out infinite;
 }
 
 @keyframes floatAvatar {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); } /* Flota 10px hacia arriba */
+    50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
