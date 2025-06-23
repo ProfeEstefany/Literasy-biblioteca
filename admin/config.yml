@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master 
+
+publish_mode: editorial_workflow # Permite que el contenido subido necesite aprobación
+media_folder: "Imagenes" # Dónde se guardarán las imágenes subidas (relativo a la raíz del proyecto)
+public_folder: "/Imagenes" # Dónde se servirán las imágenes (ruta pública)
+
+collections:
+  - name: "libros" # Nombre interno para esta colección
+    label: "Libros" # Etiqueta que verás en el CMS
+    folder: "libros" # Carpeta donde están tus archivos de libros (ej. 'libros/libro1.md')
+    create: true # Permite crear nuevos libros
+    slug: "{{slug}}" # Genera URLs amigables
+    fields: # Campos de los libros
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Autor", name: "author", widget: "string"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
+      - {label: "Portada", name: "image", widget: "image", required: false} # Campo para subir la portada
