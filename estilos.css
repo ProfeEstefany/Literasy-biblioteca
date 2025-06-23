@@ -198,3 +198,39 @@ footer {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+
+/* --- Estilos para los botones de acción --- */
+
+.boton-contenedor-centro {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.boton-accion {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton-accion:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .boton-accion {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
