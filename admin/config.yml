@@ -17,3 +17,13 @@ collections:
       - {label: "Autor", name: "author", widget: "string"}
       - {label: "Contenido", name: "body", widget: "markdown"}
       - {label: "Portada", name: "image", widget: "image", required: false} # Campo para subir la portada
+# Nueva colección para las imágenes del collage
+  - name: "collage" # Nombre interno de la colección
+    label: "Imágenes de Collage" # Etiqueta que verás en el CMS
+    folder: "Imagenes/Collage" # Carpeta donde se guardarán las imágenes de collage
+    create: true # Permite subir nuevas imágenes
+    slug: "{{slug}}" # Nombre de archivo amigable
+    fields:
+      - {label: "Título", name: "title", widget: "string", required: false} # Título opcional para la imagen
+      - {label: "Autor", name: "author", widget: "string", required: false} # Autor opcional de la imagen
+      - {label: "Imagen", name: "image", widget: "image"} # Campo para subir la imagen del collage
