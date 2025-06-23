@@ -159,4 +159,42 @@ footer {
 .introduccion h2 {
     text-align: center;
     border-bottom: none;
+}/* --- Animaciones con CSS y JS --- */
+.imagen-animable {
+    transition: transform 0.5s ease-in-out; /* Define una transición suave */
+}
+
+.imagen-animable.girar {
+    transform: rotate(10deg); /* Gira la imagen 10 grados */
+}
+
+/* Opcional: Un poco de estilo para el cursor para indicar que es interactivo */
+#imagenBienvenida {
+    cursor: pointer;
+}
+<div id="avatar-container">
+    <img id="avatar-img" src="imagenes/tu_avatar.png" alt="Avatar de la biblioteca">
+</div>
+/* --- Estilo y Animación del Avatar --- */
+#avatar-container {
+    position: fixed; /* Hace que el avatar se quede fijo en la pantalla */
+    bottom: 30px;    /* 30px desde la parte inferior */
+    right: 30px;     /* 30px desde la derecha */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    cursor: pointer; /* Indica que se puede hacer clic en él */
+    transition: all 0.5s ease-in-out; /* Transición suave para movimientos JS */
+}
+
+#avatar-img {
+    width: 80px;  /* Tamaño del avatar */
+    height: 80px;
+    border-radius: 50%; /* Hace que la imagen sea circular (si es cuadrada) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    animation: floatAvatar 3s ease-in-out infinite; /* Animación de flotación */
+}
+
+@keyframes floatAvatar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); } /* Flota 10px hacia arriba */
+    100% { transform: translateY(0px); }
 }
