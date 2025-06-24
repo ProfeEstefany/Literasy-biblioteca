@@ -1,49 +1,20 @@
+# admin/config.yml
+
 backend:
   name: git-gateway
   branch: master # Asegúrate de que sea 'master' o 'main' según tu repositorio
 
 publish_mode: editorial_workflow # Permite que el contenido subido necesite aprobación
-media_folder: "Imagenes" # Dónde se guardarán las imágenes subidas (relativo a la raíz del proyecto)
-public_folder: "/Imagenes" # Dónde se servirán las imágenes (ruta pública)
-
-collections:
-  - name: "libros" # Nombre interno para esta colección
-    label: "Libros" # Etiqueta que verás en el CMS
-    folder: "libros" # Carpeta donde están tus archivos de libros (ej. 'libros/libro1.md')
-    create: true # Permite crear nuevos libros
-    slug: "{{slug}}" # Genera URLs amigables
-    fields: # Campos de los libros
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Autor", name: "author", widget: "string"}
-      - {label: "Contenido", name: "body", widget: "markdown"}
-      - {label: "Portada", name: "image", widget: "image", required: false} # Campo para subir la portada
-# Nueva colección para las imágenes del collage
-  - name: "collage" # Nombre interno de la colección
-    label: "Imágenes de Collage" # Etiqueta que verás en el CMS
-    folder: "Imagenes/Collage" # Carpeta donde se guardarán las imágenes de collage
-    create: true # Permite subir nuevas imágenes
-    slug: "{{slug}}" # Nombre de archivo amigable
-    fields:
-      - {label: "Título", name: "title", widget: "string", required: false} # Título opcional para la imagen
-      - {label: "Autor", name: "author", widget: "string", required: false} # Autor opcional de la imagen
-      - {label: "Imagen", name: "image", widget: "image"} # Campo para subir la imagen del collage
-# admin/config.yml
-
-backend:
-  name: git-gateway
-  branch: master
-
-publish_mode: editorial_workflow # Opcional: añade flujo de trabajo de aprobación para el contenido
 media_folder: "Imagenes/uploads" # Carpeta donde Netlify CMS subirá las imágenes/archivos
-public_folder: "/Imagenes/uploads" # URL base para acceder a esos archivos
+public_folder: "/Imagenes/uploads" # URL base para acceder a esos archivos (ruta pública)
 
 collections:
   # Colección de Libros
-  - name: "libros" # Nombre de la colección (usado internamente por el CMS)
-    label: "Libros de la Biblioteca" # Etiqueta que verás en la interfaz del CMS
+  - name: "libros" # Nombre interno para esta colección
+    label: "Libros de la Biblioteca" # Etiqueta que verás en el CMS
     folder: "content/libros" # Dónde se guardarán los archivos de los libros (crearemos esta carpeta)
-    create: true # Permitir crear nuevos libros
-    slug: "{{slug}}" # Define cómo se generan los nombres de archivo
+    create: true # Permite crear nuevos libros
+    slug: "{{slug}}" # Define cómo se generan los nombres de archivo para los archivos de contenido (ej. 'titulo-del-libro.md')
     fields: # Campos que tendrá cada libro
       - {label: "Título", name: "title", widget: "string", required: true}
       - {label: "Autor", name: "author", widget: "string"}
@@ -53,10 +24,10 @@ collections:
       - {label: "Categorías", name: "categories", widget: "list", default: ["General"]}
 
   # Colección de Imágenes para el Collage
-  - name: "collage" # Nombre de la colección
-    label: "Imágenes del Collage" # Etiqueta en la interfaz
-    folder: "content/collage" # Dónde se guardarán los archivos del collage (crearemos esta carpeta)
-    create: true # Permitir añadir nuevas imágenes
+  - name: "collage" # Nombre interno de la colección
+    label: "Imágenes del Collage" # Etiqueta que verás en el CMS
+    folder: "content/collage" # Dónde se guardarán los archivos de las imágenes de collage
+    create: true # Permite añadir nuevas imágenes
     slug: "{{slug}}" # Define cómo se generan los nombres de archivo
     fields: # Campos para cada imagen
       - {label: "Título/Descripción", name: "title", widget: "string", required: true}
