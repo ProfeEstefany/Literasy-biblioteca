@@ -27,3 +27,38 @@ collections:
       - {label: "Título", name: "title", widget: "string", required: false} # Título opcional para la imagen
       - {label: "Autor", name: "author", widget: "string", required: false} # Autor opcional de la imagen
       - {label: "Imagen", name: "image", widget: "image"} # Campo para subir la imagen del collage
+# admin/config.yml
+
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: editorial_workflow # Opcional: añade flujo de trabajo de aprobación para el contenido
+media_folder: "Imagenes/uploads" # Carpeta donde Netlify CMS subirá las imágenes/archivos
+public_folder: "/Imagenes/uploads" # URL base para acceder a esos archivos
+
+collections:
+  # Colección de Libros
+  - name: "libros" # Nombre de la colección (usado internamente por el CMS)
+    label: "Libros de la Biblioteca" # Etiqueta que verás en la interfaz del CMS
+    folder: "content/libros" # Dónde se guardarán los archivos de los libros (crearemos esta carpeta)
+    create: true # Permitir crear nuevos libros
+    slug: "{{slug}}" # Define cómo se generan los nombres de archivo
+    fields: # Campos que tendrá cada libro
+      - {label: "Título", name: "title", widget: "string", required: true}
+      - {label: "Autor", name: "author", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Portada del Libro", name: "cover_image", widget: "image", required: true, media_folder: "", public_folder: ""}
+      - {label: "Archivo PDF del Libro", name: "pdf_file", widget: "file", required: true, media_folder: "", public_folder: ""}
+      - {label: "Categorías", name: "categories", widget: "list", default: ["General"]}
+
+  # Colección de Imágenes para el Collage
+  - name: "collage" # Nombre de la colección
+    label: "Imágenes del Collage" # Etiqueta en la interfaz
+    folder: "content/collage" # Dónde se guardarán los archivos del collage (crearemos esta carpeta)
+    create: true # Permitir añadir nuevas imágenes
+    slug: "{{slug}}" # Define cómo se generan los nombres de archivo
+    fields: # Campos para cada imagen
+      - {label: "Título/Descripción", name: "title", widget: "string", required: true}
+      - {label: "Imagen", name: "image", widget: "image", required: true, media_folder: "", public_folder: ""}
+      - {label: "Créditos (Opcional)", name: "credits", widget: "string"}
