@@ -159,7 +159,9 @@ footer {
 .introduccion h2 {
     text-align: center;
     border-bottom: none;
-}/* --- Animaciones con CSS y JS --- */
+}
+
+/* --- Animaciones con CSS y JS --- */
 .imagen-animable {
     transition: transform 0.5s ease-in-out; /* Define una transición suave */
 }
