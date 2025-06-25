@@ -160,3 +160,41 @@ footer {
     text-align: center;
     border-bottom: none;
 }
+
+/* --- Animaciones con CSS y JS --- */
+.imagen-animable {
+    transition: transform 0.5s ease-in-out; /* Define una transición suave */
+}
+
+.imagen-animable.girar {
+    transform: rotate(10deg); /* Gira la imagen 10 grados */
+}
+
+/* Opcional: Un poco de estilo para el cursor para indicar que es interactivo */
+#imagenBienvenida {
+    cursor: pointer;
+}
+
+/* --- Estilo y Animación del Avatar --- */
+#avatar-container {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: floatAvatar 3s ease-in-out infinite;
+}
+
+@keyframes floatAvatar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
