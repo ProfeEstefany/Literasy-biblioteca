@@ -96,15 +96,32 @@ section img {
     justify-content: center; /* Centra las tarjetas horizontalmente */
 }
 
+/* --- NUEVO: Estilos para el contenedor de libros en las páginas de categoría --- */
+.seccion-categoria .libros-de-categoria {
+    display: flex;       /* Habilita Flexbox */
+    flex-wrap: wrap;     /* Permite que los elementos pasen a la siguiente línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px;           /* Espacio entre las tarjetas (horizontal y vertical) */
+    padding: 20px 0;     /* Un poco de relleno superior e inferior para el contenedor de la cuadrícula */
+}
+
+    /* Estilos para las tarjetas de libros individuales (aplican tanto a destacados como a categorías) */
 .libro-card {
     background-color: #f9f9f9; /* Fondo de la tarjeta */
     border: 1px solid #ddd; /* Borde de la tarjeta */
     border-radius: 8px; /* Bordes redondeados */
     padding: 15px;
-    width: 200px; /* Ancho fijo de la tarjeta */
+    width: 180px; /* Ancho fijo de cada tarjeta, ajustado para el diseño de cuadrícula */
     text-align: center; /* Centra el contenido de la tarjeta */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+    min-height: 280px; /* Asegura una altura mínima para uniformidad */
+
+/* Reglas Flexbox para el contenido INTERNO de cada tarjeta */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    justify-content: space-between; /* Empuja el botón al final de la tarjeta */
+    align-items: center; /* Centra el contenido (imagen, texto, botón) horizontalmente */
 }
 
 .libro-card:hover {
